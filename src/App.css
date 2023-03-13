@@ -53,12 +53,3 @@ p {
   margin-bottom: 5rem;
   text-align: initial;
 }
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  height: 1rem;
-  font-size: 1rem;
-  margin: 5px;
-}

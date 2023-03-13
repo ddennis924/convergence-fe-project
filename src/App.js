@@ -38,12 +38,20 @@ const App = () => {
     setImages(newImages);
   };
 
+  const recursiveShuffle = (imageList, n) => {
+    if (n < imageList.length) {
+      const i = Math.floor(Math.random() * imageList.length);
+      const temp = imageList[i];
+      imageList[i] = imageList[n];
+      imageList[n] = temp;
+      recursiveShuffle(imageList, n + 1);
+    }
+    return imageList;
+  };
+
   const handleClick = () => {
-    let imagesRandom = images
-      .map((value) => ({ value, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ value }) => value);
-    setImages(imagesRandom);
+    const newImages = Array.from(images);
+    setImages(recursiveShuffle(newImages, 0));
   };
 
   const handleScroll = (e) => {
@@ -57,7 +65,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Convergence Concepts Image Gallery</h1>
+        <h1>Convergence Concepts Image Gallery - Dennis Li</h1>
         <p>
           This app uses react-beautiful-dnd and lazy loading to reduce load.
           Drag and drop any image to change its order, or press randomize order
@@ -69,7 +77,6 @@ const App = () => {
           </DragDropContext>
         </div>
         <RandomizeButton handleClick={handleClick} />
-        <span className="footer">Created By Dennis Li</span>
       </header>
     </div>
   );
