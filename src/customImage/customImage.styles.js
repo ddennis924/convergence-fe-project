@@ -11,7 +11,7 @@ export const ImageContainer = styled.div`
   background-image: url(${href});
     border-radius: 5rem;
     background-size: 400px;
-   box-shadow: 0px 5px 10px 0px rgb(30, 30, 30);
+   filter: drop-shadow(10px 10px 4px rgb(30,30,30));
    border: 2px solid rgb(30, 30, 30);
   margin: 20px;
   `}
