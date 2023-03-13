@@ -2,7 +2,7 @@
 
 Convergence Coop Assessment
 
-Simple web app that fetched JSON data from http://jsonplaceholder.typicode.com and displays images in a horizontal gallery.
+Simple web app that fetches JSON data from http://jsonplaceholder.typicode.com and displays images in a horizontal gallery.
 
 Since the browser already caches images, caching does not need to be implemented.
 
